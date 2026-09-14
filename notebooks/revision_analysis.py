@@ -17,7 +17,7 @@ import statsmodels.formula.api as smf
 from statsmodels.stats.outliers_influence import variance_inflation_factor
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'revision' / 'results'
+OUT = ROOT / 'results'
 OUTCOMES = ['H2A_M', 'H2A_I', 'H2A_W']
 SEED = 20260910
 N_BOOT = 10000

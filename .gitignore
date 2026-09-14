@@ -1,2 +1,5 @@
 # Local manuscript revision files and working material.
 /revision/
+
+# Python bytecode caches.
+__pycache__/

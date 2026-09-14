@@ -1,0 +1,20 @@
+{
+  "python": "3.14.7",
+  "packages": {
+    "numpy": "2.5.2",
+    "scipy": "1.18.0",
+    "statsmodels": "0.14.6",
+    "pandas": "3.0.5",
+    "nbclient": "0.11.0",
+    "python-docx": "1.2.0",
+    "pingouin": "0.6.1"
+  },
+  "inputs": {
+    "data/h2a_allspeeds_43subs.csv": "0b7b63bda841c37741446ac2f7bdbceef1ebc39575778956d8175f5b9e54f019",
+    "data/h2a_comfspeed_43subs.csv": "800a173f5229af47901296b902a65d3d3b79b6f947379541d97a3decdbfb05b0"
+  },
+  "bootstrap_seed": 20260910,
+  "bootstrap_samples": 10000,
+  "scaling": "Continuous variables: full-sample mean and sample SD (ddof=1); age and sex: 0/1",
+  "bootstrap": "Paired subject rows, fixed scaling; percentile primary, BCa sensitivity; no causal interpretation"
+}

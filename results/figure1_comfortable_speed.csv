@@ -1,0 +1,2 @@
+subjects,mean,ci_low,ci_high,method
+43,1.2499999999999998,1.2067837096244147,1.2932162903755848,"subject-level t, df=42"

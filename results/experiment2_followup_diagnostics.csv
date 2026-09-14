@@ -1,0 +1,13 @@
+model,outcome,formula,covariance,use_t,df_resid,n,r2,design_rank,condition_number,max_leverage,max_cooks_distance
+cadence_sex_classical,H2A_M,H2A_M ~ AgeGroup + Cadence + Female,nonrobust,True,39,43,0.369040292915,4,3.23418532819,0.231977555105,0.152870953544
+cadence_sex_hc3,H2A_M,H2A_M ~ AgeGroup + Cadence + Female,HC3,True,39,43,0.369040292915,4,3.23418532819,0.231977555105,0.152870953544
+cadence_sex_height,H2A_M,H2A_M ~ AgeGroup + Cadence + Female + Height,nonrobust,True,38,43,0.369214062114,5,4.89790621387,0.312177511518,0.178478964681
+cadence_sex_relative_speed,H2A_M,H2A_M ~ AgeGroup + Cadence + Female + RelativeSpeed,nonrobust,True,38,43,0.422117287323,5,3.31587475203,0.245068940159,0.228371619232
+cadence_sex_classical,H2A_I,H2A_I ~ AgeGroup + Cadence + Female,nonrobust,True,39,43,0.366293175513,4,3.23418532819,0.231977555105,0.254545815882
+cadence_sex_hc3,H2A_I,H2A_I ~ AgeGroup + Cadence + Female,HC3,True,39,43,0.366293175513,4,3.23418532819,0.231977555105,0.254545815882
+cadence_sex_height,H2A_I,H2A_I ~ AgeGroup + Cadence + Female + Height,nonrobust,True,38,43,0.386095710041,5,4.89790621387,0.312177511518,0.206983139479
+cadence_sex_relative_speed,H2A_I,H2A_I ~ AgeGroup + Cadence + Female + RelativeSpeed,nonrobust,True,38,43,0.390780230835,5,3.31587475203,0.245068940159,0.213234005769
+cadence_sex_classical,H2A_W,H2A_W ~ AgeGroup + Cadence + Female,nonrobust,True,39,43,0.171574333751,4,3.23418532819,0.231977555105,0.303083958472
+cadence_sex_hc3,H2A_W,H2A_W ~ AgeGroup + Cadence + Female,HC3,True,39,43,0.171574333751,4,3.23418532819,0.231977555105,0.303083958472
+cadence_sex_height,H2A_W,H2A_W ~ AgeGroup + Cadence + Female + Height,nonrobust,True,38,43,0.174176227616,5,4.89790621387,0.312177511518,0.317997219356
+cadence_sex_relative_speed,H2A_W,H2A_W ~ AgeGroup + Cadence + Female + RelativeSpeed,nonrobust,True,38,43,0.202800537853,5,3.31587475203,0.245068940159,0.244267532034
