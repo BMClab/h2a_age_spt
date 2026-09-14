@@ -1,0 +1,17 @@
+# Environment used to produce the published results (Python 3.14.7).
+#     python -m venv .venv && .venv/bin/pip install -r requirements.txt
+# On Colab the notebooks install only pingouin and watermark on top of the
+# preinstalled scientific stack; these pins are for local installs.
+numpy==2.5.2
+scipy==1.18.0
+pandas==3.0.5
+matplotlib==3.11.1
+seaborn==0.13.2
+plotly==6.9.0
+statsmodels==0.14.6
+patsy==1.0.2
+pingouin==0.6.1
+tqdm==4.70.0
+watermark==2.6.0
+ipykernel==7.3.0
+jupyterlab==4.6.3
