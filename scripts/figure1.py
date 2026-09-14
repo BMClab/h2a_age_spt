@@ -8,6 +8,12 @@ import statsmodels.formula.api as smf
 import matplotlib.pyplot as plt
 
 
+def formula_coding(fit):
+    """Patsy coding of a fitted formula; statsmodels 0.15 renamed this attribute."""
+    data = fit.model.data
+    return data.model_spec if hasattr(data, 'model_spec') else data.design_info
+
+
 def make_figure1(root=None):
     root = Path(root) if root is not None else Path(__file__).resolve().parents[1]
     data = pd.read_csv(root / 'data/h2a_allspeeds_43subs.csv')
@@ -30,6 +36,7 @@ def make_figure1(root=None):
         assert np.linalg.eigvalsh(fit.cov_re).min() > 0, outcome
         fits[outcome] = fit
         names = fit.fe_params.index
+        coding = formula_coding(fit)
         covariance = fit.cov_params().loc[names, names].to_numpy()
         ax.axvspan(*speed_ci, color='0.2', alpha=.10, zorder=0)
         ax.axvline(mean_speed, color='0.25', lw=1, ls='--')
@@ -37,7 +44,7 @@ def make_figure1(root=None):
             group = data.loc[data.AgeGroup.eq(age)]
             grid = pd.DataFrame({'Speed': np.linspace(group.Speed.min(), group.Speed.max(), 150),
                                  'AgeGroup': age})
-            design = np.asarray(build_design_matrices([fit.model.data.design_info], grid)[0])
+            design = np.asarray(build_design_matrices([coding], grid)[0])
             mu = design @ fit.fe_params.to_numpy()
             variance = np.einsum('ij,jk,ik->i', design, covariance, design)
             assert np.all(variance >= 0)

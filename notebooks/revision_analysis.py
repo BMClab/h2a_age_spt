@@ -412,12 +412,24 @@ def descriptive():
     return write_table(pd.DataFrame(rows), 'descriptive')
 
 
+def installed_versions(names):
+    """Versions of `names` that are present; absent ones are simply not recorded."""
+    versions = {}
+    for name in names:
+        try:
+            versions[name] = importlib.metadata.version(name)
+        except importlib.metadata.PackageNotFoundError:
+            continue
+    return versions
+
+
 def provenance():
     OUT.mkdir(parents=True, exist_ok=True)
     files = list((ROOT/'data').glob('*43subs.csv'))
     record = dict(python=platform.python_version(),
-                  packages={x: importlib.metadata.version(x) for x in
-                            ['numpy', 'scipy', 'statsmodels', 'pandas', 'nbclient', 'python-docx', 'pingouin']},
+                  packages=installed_versions(
+                      ['numpy', 'scipy', 'statsmodels', 'patsy', 'pandas', 'pingouin',
+                       'nbclient', 'python-docx']),
                   inputs={str(f.relative_to(ROOT)): hashlib.sha256(f.read_bytes()).hexdigest() for f in files},
                   bootstrap_seed=SEED, bootstrap_samples=N_BOOT,
                   scaling='Continuous variables: full-sample mean and sample SD (ddof=1); age and sex: 0/1',
